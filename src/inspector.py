@@ -274,9 +274,9 @@ def _print_report(result: InspectionResult) -> None:
     ):
         for s in streams:
             if s.codec_type == "video":
-                details = f"{s.width}x{s.height} @ {s.frame_rate} fps"
+                details = f"{s.width or '?'}x{s.height or '?'} @ {s.frame_rate or '?'} fps"
             elif s.codec_type == "audio":
-                details = f"{s.channels}ch  {s.sample_rate} Hz"
+                details = f"{s.channels or '?'}ch  {s.sample_rate or '?'} Hz"
             else:
                 details = s.title or ""
             tbl.add_row(

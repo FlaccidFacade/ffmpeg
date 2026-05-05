@@ -111,8 +111,8 @@ def _parse_time_seconds(line: str) -> Optional[float]:
     match = _TIME_RE.search(line)
     if not match:
         return None
-    h, m, s, cs = (int(x) for x in match.groups())
-    return h * 3600 + m * 60 + s + cs / 100
+    h, m, s, centiseconds = (int(x) for x in match.groups())
+    return h * 3600 + m * 60 + s + centiseconds / 100
 
 
 # ---------------------------------------------------------------------------
